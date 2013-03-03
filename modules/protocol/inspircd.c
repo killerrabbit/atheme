@@ -34,7 +34,7 @@ ircd_t InspIRCd = {
 	PROTOCOL_INSPIRCD,		/* Protocol type */
 	CMODE_PERM,                              /* Permanent cmodes */
 	CMODE_IMMUNE,                              /* Oper-immune cmode */
-	"beIg",                         /* Ban-like cmodes */
+	"beIgXw",                         /* Ban-like cmodes */
 	'e',                            /* Except mchar */
 	'I',                            /* Invex mchar */
 	IRCD_CIDR_BANS | IRCD_HOLDNICK  /* Flags */
@@ -139,7 +139,7 @@ static mowgli_node_t *inspircd_next_matching_ban(channel_t *c, user_t *u, int ty
 			return n;
 
 		if (cb->mask[1] == ':' &&
-			(cb->mask[0] == 'M' || cb->mask[0] == 'R' || cb->mask[0] == 'j' || cb->mask[0] == 'r' || cb->mask[0] == 'U'))
+			(cb->mask[0] == 'M' || cb->mask[0] == 'R' || cb->mask[0] == 'j' || cb->mask[0] == 'r' || cb->mask[0] == 'U' || cb->mask[0] == 'm'))
 		{
 			bool matched = false;
 
